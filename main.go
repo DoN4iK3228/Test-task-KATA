@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	arabicNumerals := map[string]int{"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10}
+	arabicNumerals := map[string]int{"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10, "XI": 11, "XII": 12, "XIII": 13, "XIV": 14, "XV": 15, "XVI": 16, "XVII": 17, "XVIII": 18, "XIX": 19, "XX": 20}
 	var result, Dig1, Dig2 int
 	var err error
 	arDig1 := false
@@ -32,12 +32,15 @@ func main() {
 
 	if value, ok := arabicNumerals[Parts[0]]; ok {
 		Dig1 = value
+		if Dig1 > 10 {
+			panic("Выдача паники, так как первое число не входит в диапазон от 1 до 10 включительно")
+		}
 		arDig1 = true
 
 	} else {
 		Dig1, err = strconv.Atoi(Parts[0])
 		if Dig1 < 0 || Dig1 > 10 {
-			panic("Выдача паники, так как одно число или более не входит в диапазон от 1 до 10 включительно")
+			panic("Выдача паники, так как первое число не входит в диапазон от 1 до 10 включительно")
 		}
 		if err != nil {
 			panic("Выдача паники, так как строка не является математической операцией.")
@@ -46,11 +49,14 @@ func main() {
 
 	if value, ok := arabicNumerals[Parts[2]]; ok {
 		Dig2 = value
+		if Dig2 > 10 {
+			panic("Выдача паники, так как второе число не входит в диапазон от 1 до 10 включительно")
+		}
 		arDig2 = true
 	} else {
 		Dig2, err = strconv.Atoi(Parts[2])
 		if Dig2 < 0 || Dig2 > 10 {
-			panic("Выдача паники, так как одно число или более не входит в диапазон от 1 до 10 включительно")
+			panic("Выдача паники, так как второе число не входит в диапазон от 1 до 10 включительно")
 		}
 		if err != nil {
 			panic("Выдача паники, так как строка не является математической операцией.")
