@@ -49,7 +49,7 @@ func main() {
 		arDig1 = true
 	} else {
 		Dig1, err = strconv.Atoi(Parts[0])
-		if Dig1 < 0 || Dig1 > 10 {
+		if Dig1 < 1 || Dig1 > 10 {
 			panic("Выдача паники, так как первое число не входит в диапазон от 1 до 10 включительно")
 		}
 		if err != nil {
@@ -65,7 +65,7 @@ func main() {
 		arDig2 = true
 	} else {
 		Dig2, err = strconv.Atoi(Parts[2])
-		if Dig2 < 0 || Dig2 > 10 {
+		if Dig2 < 1 || Dig2 > 10 {
 			panic("Выдача паники, так как второе число не входит в диапазон от 1 до 10 включительно")
 		}
 		if err != nil {
